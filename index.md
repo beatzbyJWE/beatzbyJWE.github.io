@@ -2,33 +2,25 @@
 
 ---
 
-### Category Name 1 
+### UVA Data Science Program 
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Haiti Relief Project](/https://beatzbyjwe.github.io/machinelearnjoe/Disaster%20Relief%20Project.htm)
+<img src="images/Screen Shot 2020-12-31 at 4.53.33 PM.png?raw=true"/>
 
 ---
 
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+---
 
 ---
 
+### Personal Data Science Work
 
+- [[NFL 2021 Big Data Bowl](/pdf/sample_presentation.pdf)
 
+---
+
+### Work
+- [Data Validation]
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
