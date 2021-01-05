@@ -4,7 +4,7 @@
 
 ### UVA Data Science Program 
 
-[Haiti Relief Project](/https://beatzbyjwe.github.io/machinelearnjoe/Disaster%20Relief%20Project.htm)
+[Haiti Relief Project](/beatzbyjwe.github.io/machinelearnjoe/Disaster%20Relief%20Project.htm)
 <img src="images/Screen Shot 2020-12-31 at 4.53.33 PM.png?raw=true"/>
 
 ---
