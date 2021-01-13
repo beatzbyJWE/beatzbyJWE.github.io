@@ -1,7 +1,7 @@
 title: _joe eldredge # your name (or website title) here
 logo: "/images/logo.jpeg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  I made ^ this mosaic ^ using Python using codebox's mosaic program. <a href="https://github.com/codebox/mosaic">
+  <a href="https://github.com/codebox/mosaic">I made ^ this mosaic ^ in Python and CLI using codebox's mosaic program</a> 
   <br><br>
   Please browse my site to see what I have been up to - my interests are managing data or projects involving data.
   <br><br>
