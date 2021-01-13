@@ -1,4 +1,4 @@
-## Portfolio
+# Portfolio
 
 ---
 
@@ -18,14 +18,14 @@ In this project I will:
 <img src="images/Screen Shot 2020-12-31 at 4.53.33 PM.png?raw=true"/>
 
 ---
-## Dendograms Exercise
+[Dendograms Exercise]
 In this exercise are solutions for 
   
 ---
 
 ---
 
-### Personal Data Science Work
+## Personal Data Science Work
 
 [Simple Data Wrangling Practice](/machinelearnjoe/Data%Wrangling%Practice.htm)
 I completed this exercise early into data science because it provides a great baseline for:
@@ -37,7 +37,7 @@ I completed this exercise early into data science because it provides a great ba
 
 ---
 
-### Work
+## Work
 Project Management
 
 ---
@@ -48,7 +48,7 @@ In my work life I manage a team that handles data validation. Here is an exercis
   <li>Compare this year to another value in the same record.</li>
   <li>Discuss accuracy of the results.</li>
 
-[Treating Structured Data as Unstructured to Learn about Data Quality]
+[Treating Structured Data as Unstructured to Learn about Data Quality](/machinelearnjoe/Data%Wrangling%Practice.htm)
 In this project I will:
 <li>Use k-means clustering to group data with a known structure</li>
 <li>Use neural networks to do the same thing. </li>  
