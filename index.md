@@ -7,7 +7,7 @@
 [Haiti Relief Project](/machinelearnjoe/Disaster%20Relief%20Project.htm)
 In this project I will:
 <ul>
-  <li>Show how data science could have augment administration of life-saving relief in a short timeframe after the 2010 Haiti Earthquake.</li>
+  <li>Show how data science could have augmented the provision of life-saving relief after the 2010 Haiti Earthquake.</li>
   <li>Compare traditional classification techniques with machine learning methods for solving a color-based classification problem.</li>
    <li>Iterate through a simple cost/benefit analysis method where a tailored "F-Score" balances precision and recall during classification.</li>
   <li>Wrangle and combine large datasets. </li>
@@ -34,8 +34,6 @@ I completed this exercise early into data science because it provides a great ba
 
 - [[NFL 2021 Big Data Bowl](/pdf/sample_presentation.pdf)
 
-
----
 
 ## Work
 Project Management
