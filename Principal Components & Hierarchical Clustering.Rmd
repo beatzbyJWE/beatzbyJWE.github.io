@@ -1,0 +1,160 @@
+---
+title: 'SYS 6018: Module 10 Exercises'
+author: "Joe Eldredge | jwe2n@virginia.edu"
+output:
+  html_document:
+    theme: spacelab
+    highlight: kate
+    code_folding: hide
+    toc: True
+    toc_float: True
+    toc_depth: 2
+---
+
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # No collapse by default
+                      code_folding=TRUE,
+                      echo=TRUE,         # echo code by default
+                      tidy=TRUE,
+                      cache=TRUE,
+                      comment = "#>",    # change comment character
+                      fig.width = 6,     # set figure width
+                      fig.align = "center", # set figure position
+                      warning=FALSE,     # do not show R warnings
+                      message=FALSE)     # do not show R messages
+
+```
+
+<style>
+  h1.title {
+    font-size: 26px;
+  }
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 { 
+  font-size: 16px;
+}
+h4 {
+  font-size:14px;
+}
+
+</style>
+
+
+I am inheriting many formulas in this workbook SYS 6018 lab file and in the textbook [An Introduction to Statistical Learning. (James, 2013)](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf), from live session (live.rmd) files provided for the course, as well as from general resource documentation provided by RStudio in https://rstudio.com/resources/cheatsheets/.  All other programming is my own, though I have developed working knowledge from many online forums. I may also use online solutions to verify solutions as is permitted and will cite sources where I have done so throughout. I will annotate the code throughout to indicate that I have not re-purposed any code without understanding. I will use the packages below for these exercises. 
+
+```{r}
+library(ISLR)
+library(ggplot2)
+library(tidyverse)
+```
+
+# 8. In Section 10.2.3, a formula for calculating PVE was given in Equation 10.8. We also saw that the PVE can be obtained using the sdev output of the prcomp() function. On the USArrests data, calculate PVE in two ways:
+
+## (a) Using the sdev output of the prcomp() function, as was done in Section 10.2.3.
+```{r}
+pr.out<-prcomp(USArrests,scale=TRUE)
+#By default, the prcomp() function centers the variables to have mean zero.
+#By using the option scale=TRUE, we scale the variables to have standard deviation one. The output from prcomp() contains a number of useful quantities.
+
+#From ISLR text: The center and scale components correspond to the means and standard deviations of the variables that were used for scaling prior to implementing PCA.
+pr.var<-pr.out$sdev^2 #the variance explained by the mth principal component
+pr.var
+
+#From ISLR: "To compute the proportion of variance explained by each principal component, we simply divide the variance explained by each principal component by the total variance explained by all four principal components"
+pve<-pr.var/sum(pr.var) #the proportion of the variance explained by each principal component to the total variance 
+pve
+```
+
+## (b) By applying Equation 10.8 directly. That is, use the prcomp() function to compute the principal component loadings. Then, use those loadings in Equation 10.8 to obtain the PVE. These two approaches should give the same results.
+
+Credit to my colleague Sam Parsons for providing sound mathematical notation which explained to me the methodology below. This method also aligns with a [solution available here](https://rpubs.com/ppaquay/65568) which I used to verify the approach for this part.
+
+### Step 1: Obtain the principal components vector
+The principal component scores for each observation is a 50x4 vector equivalent to *pr.out$x*. In this part we obtain these values by multiplying each observation by each principal component loading vector. Since we can represent both of these as matrices, we can use matrix multiplication to get those scores. The problem prompt says to start with the loadings. But before doing so, we need to scale all of these as a percent of the total standard deviation to match "scale=TRUE" above.
+```{r}
+#Observations as a dataframe
+obs<-as.matrix(USArrests)# %>% as.matrix(select(Murder, Assault, UrbanPop, Rape))
+obs_convert<-scale(obs) #this scales all observations by standard deviation (square root of variance); given from the text. An alternate way to get this would be to divide by global stdev.
+
+#From ISLR: "The rotation matrix provides the principal component loadings; each column of pr.out$rotation contains the corresponding principal component."
+loadings<-as.matrix(pr.out$rotation)
+
+#https://stat.ethz.ch/R-manual/R-devel/library/base/html/matmult.html
+scores<-obs_convert%*%loadings #[%*% automatically does the matrix multiplication!]
+scores #these principal component scores by State/component are the same as pr.out$x
+```
+
+### Step 2: Compute the Variance from each Principal Component (equation 10.8 numerator)
+To compute the variance from each principal component (from 1 to m), we can square each score element and then sum the all 50 of those squared scores. $\sum_{i=1}^{n}(\sum_{j=1}^{p}φ_{jm}x_{ij})^2$ 
+
+```{r}
+#this would probably be neater in an apply statement or a function; I will compute individually
+var_pc1<-sum(scores[,1]^2) #variance from pc1
+var_pc2<-sum(scores[,2]^2) #variance from pc2
+var_pc3<-sum(scores[,3]^2) #...pc3
+var_pc4<-sum(scores[,4]^2) #...pc4
+df.var<-data.frame(var_pc1,var_pc2,var_pc3,var_pc4) #make a data frame with all four PCs
+df.var
+```
+
+### Step 3: Calculate the Total Variance (equation 10.8 denominator)
+To compute the total variance, we square all elements and then add those up. In other words, we sum up all of our individual PC variance frames. $\sum_{j=1}^{p}\sum_{i=1}^{n}x_{ij}^2$.
+```{r}
+var_tot<-sum(obs_convert^2) #total variance for the whole matrix
+var_tot
+```
+
+### Step 4: Calculate PVE
+Then we put calculate the percent of variance explained by each individual principal component by dividing the total var of each PC by the total var.
+```{r}
+PVE_math<-df.var/var_tot #compute the proportion of variance explained for each PC
+PVE_math
+```
+As expected, we see the same result. 
+
+# 9. Consider the USArrests data. We will now perform hierarchical clustering on the states.
+
+## (a) Using hierarchical clustering with complete linkage and Euclidean distance, cluster the states.
+```{r}
+#From ISLR " The dist() function is used to compute the 50 × 50 inter-observation Euclidean distance matrix"
+hc.complete=hclust(dist(USArrests[1]), method="complete")
+```
+
+## (b) Cut the dendrogram at a height that results in three distinct clusters. Which states belong to which clusters?
+```{r}
+set.seed(2)
+cutden<-cutree(hc.complete , 3)
+cutden
+```
+
+## (c) Hierarchically cluster the states using complete linkage and Euclidean distance, after scaling the variables to have standard deviation one.
+
+```{r}
+USAsc=scale(USArrests) #function found in ISLR
+hc.complete2=hclust(dist(USAsc), method="complete")
+par(mfrow=c(1,1))
+plot(hc.complete2,main="Complete Linkage ", xlab="", sub="", hang=-1,cex=0.75)
+
+#http://www.sthda.com/english/wiki/beautiful-dendrogram-visualizations-in-r-5-must-known-methods-unsupervised-machine-learning
+#Another nice vis I found online (incidentally using this dataset as an example); require "ape" package to use
+library(ape)
+colors = c("pink", "magenta", "orange")
+plot(as.phylo(hc.complete2), type = "fan", tip.color = colors[cutden],
+     label.offset = 0, cex = 0.5)
+```
+
+## (d) What effect does scaling the variables have on the hierarchical clustering obtained? In your opinion, should the variables be scaled before the inter-observation dissimilarities are computed? Provide a justification for your answer.
+
+Scaling standardizes the units of measurement across features used in the Euclidean distance calculation. The design is so that one variable doesn't dominate another because of scale, thereby creating dissimilarities that make no practical sense, regardless of linkage used.
+
+The [ISLR textbook](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf) provides what I think is a great answer on whether the variables should be scaled: 
+*"This may not be desirable. If the variables are scaled to have standard deviation one before the inter-observation dissimilarities are computed, then each variable will in effect be given equal importance in the hierarchical clustering performed. We might also want to scale the variables to have standard deviation one if they are measured on different scales; otherwise, the choice of units (e.g. centimeters versus kilometers) for a particular variable will greatly affect the dissimilarity measure obtained. It should come as no surprise that whether or not it is a good decision to scale the variables before computing the dissimilarity measure depends on the application at hand."*
+
+So, when units are radically different, they should be controlled for with scaling unless the desired result is for a certain scale to dominate during the dissimilarity calculation.
