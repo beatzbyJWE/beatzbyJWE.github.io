@@ -1,10 +1,13 @@
 # Portfolio
 
----
+In my portfolio I provide some of my work in data science across my professional and academic careers. I will be adding to this regularly as I continue to learn about and adopt the principles of data science.
 
 ### UVA Data Science Program 
 
+Here are a few of the things I am most proud of working on during my time enrolled at the University of Virginia School of Data Science.
+
 [Haiti Relief Project](/machinelearnjoe/Disaster%20Relief%20Project.htm)
+
 In this project I will:
 <ul>
   <li>Show how data science could have augmented the provision of life-saving relief after the 2010 Haiti Earthquake.</li>
@@ -26,6 +29,7 @@ In this exercise are solutions for classwork related to hierarchical clustering 
 ## Personal Data Science Work
 
 [Simple Data Wrangling Practice](/DataWrangling_Practice.html)
+
 I completed this exercise early into my excursion in data science because it provides a great R crash course in:
 <ul>
   <li>Dealing with formatting and incorrect or undesirable data types.</li>
@@ -39,6 +43,7 @@ I completed this exercise early into my excursion in data science because it pro
 ## Work
 ---
 [Using NLP to Validate Data](/machinelearnjoe/Data%Wrangling%Practice.htm)
+
 In my job I manage a team that handles data validation. Here is an exercise that I did on on public data as a proof of concept for a data validation technique. The goal was to: 
 <ol>
   <li>Locate and extract "year" from long text "notes".</li>
@@ -46,6 +51,7 @@ In my job I manage a team that handles data validation. Here is an exercise that
   <li>Discuss accuracy of the results.</li>
 
 [Treating Structured Data as Unstructured to Learn about Data Quality](/machinelearnjoe/Data%Wrangling%Practice.htm)
+
 In this project I will:
 <li>Use k-means clustering to group data with a known structure</li>
 <li>Use neural networks to do the same thing. </li>
