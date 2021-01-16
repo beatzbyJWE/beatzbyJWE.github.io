@@ -49,6 +49,7 @@ In my job I manage a team that handles data validation. Here is an exercise that
   <li>Locate and extract "year" from long text "notes".</li>
   <li>Compare this year to another value in the same record.</li>
   <li>Discuss accuracy of the results.</li>
+</ol>
 
 [Treating Structured Data as Unstructured to Learn about Data Quality](/machinelearnjoe/Data%Wrangling%Practice.htm)
 
