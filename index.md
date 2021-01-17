@@ -21,6 +21,7 @@ In this project I will:
 <img src="images/Screen Shot 2020-12-31 at 4.53.33 PM.png?raw=true"/>
 
 [Principal Components and Hierarchical Clustering](/PC%20%26%20Hierarchical%20Cluster.htm)
+
 In this exercise are solutions for classwork related to hierarchical clustering and establishing variance explained by principal components starting by creating loading vectors from the original data. A colleague demonstrated the math to do so and I coded it in R.
 
 ---
