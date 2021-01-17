@@ -1,9 +1,7 @@
 # Portfolio
----
 
 In my portfolio I provide some of my work in data science across my professional and academic careers. I will be adding to this regularly as I continue to learn about and adopt the principles of data science.
 
----
 ## UVA Data Science Program 
 
 Here are a few of the things I am most proud of working on during my time enrolled at the University of Virginia School of Data Science.
