@@ -1,7 +1,7 @@
 # Portfolio
 
 In my portfolio I provide some of my work in data science across my professional and academic careers. I will be adding to this regularly as I continue to learn about and adopt the principles of data science.
-
+---
 ### UVA Data Science Program 
 
 Here are a few of the things I am most proud of working on during my time enrolled at the University of Virginia School of Data Science.
@@ -20,7 +20,6 @@ In this project I will:
 
 <img src="images/Screen Shot 2020-12-31 at 4.53.33 PM.png?raw=true"/>
 
----
 [Principal Components and Hierarchical Clustering](beatzbyJWE.github.io/blob/master/PC%20%26%20Hierarchical%20Cluster.htm)
 In this exercise are solutions for classwork related to hierarchical clustering and establishing variance explained by principal components starting by creating loading vectors from the original data. A colleague demonstrated the math to do so and I coded it in R.
 
@@ -37,11 +36,11 @@ I completed this exercise early into my excursion in data science because it pro
   <li>Organizing a data file.</li>
 </ul>
 
-- [[NFL 2021 Big Data Bowl](/pdf/sample_presentation.pdf)
+[NFL 2021 Big Data Bowl](/pdf/sample_presentation.pdf)
 
-
-## Work
 ---
+## Work
+
 [Using NLP to Validate Data](/machinelearnjoe/Data%Wrangling%Practice.htm)
 
 In my job I manage a team that handles data validation. Here is an exercise that I did on on public data as a proof of concept for a data validation technique. The goal was to: 
