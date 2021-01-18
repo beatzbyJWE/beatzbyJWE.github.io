@@ -42,7 +42,7 @@ I completed this exercise early into my excursion in data science because it pro
 ---
 ## Work
 
-[Using NLP to Validate Data](/NLP wPublic Transit Data.ipynb)
+[Using NLP to Validate Data](/NLP_wPublic_Transit_Data.ipynb)
 
 In my job I manage a team that handles data validation. Here is an exercise that I did on on public data as a proof of concept for a data validation technique. The goal was to: 
 <ol>
