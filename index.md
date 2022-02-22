@@ -6,6 +6,10 @@ In my portfolio I provide some of my work in data science across my professional
 
 Here are a few of the things I am most proud of working on during my time enrolled at the University of Virginia School of Data Science.
 
+Movie Recommender System Using IMDB Dataset
+[Movie Recommender System Project](/machinelearnjoe/Kmeans_tomatoes.ipynb)
+A team and I used a variet of techniques to predict movie scores. This is some of the work from that project where we were using kmeans clustering to explore whether there were organic clusters between models when certain features were and weren't included. It was a way to used supervised learning for data exploration before moving onto learning with unlabeled data.
+
 [Haiti Relief Project](/machinelearnjoe/Disaster%20Relief%20Project.htm)
 
 In this project I will:
@@ -23,6 +27,8 @@ In this project I will:
 [Principal Components and Hierarchical Clustering](/PC%20%26%20Hierarchical%20Cluster.htm)
 
 In this exercise are solutions for classwork related to hierarchical clustering and establishing variance explained by principal components starting by creating loading vectors from the original data. A colleague demonstrated the math to do so and I coded it in R.
+
+[Connecting to APIs Using Json] (
 
 ---
 
