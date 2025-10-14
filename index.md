@@ -26,7 +26,7 @@ An interactive time-slider visualization of transit safety incidents in New York
   <li>Interactive exploration of safety events over time</li>
 </ul>
 
-<iframe src="\fta_nyc_time_slider_map.html" width="800" height="600" style="border:none;"></iframe>
+<iframe src="/fta_nyc_time_slider_map.html" width="800" height="600" style="border:none;"></iframe>
 
 I used the data collected through the NTD that my team helped to validate and publish to transportation.dot.gov. I asked Claude for some help with finding the deadliest events in New York City. The resulting code is here:
 - [NYC Base Map Generation](/fta_nyc_basemap.py) - Creating foundational transit system maps
