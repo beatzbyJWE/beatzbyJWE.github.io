@@ -2,6 +2,37 @@
 
 In my portfolio I provide some of my work in data science across my professional and academic careers. I will be adding to this regularly as I continue to learn about and adopt the principles of data science.
 
+## Work
+
+### FTA Safety Analysis & Visualization
+
+I've developed a comprehensive suite of tools for analyzing and visualizing Federal Transit Administration (FTA) safety data. This work demonstrates geospatial analysis, interactive visualization, and data-driven insights for public transit safety to aid policy makers.
+
+[FTA Safety Analysis](/fta_safety_analysis.py)
+
+For example, I developed an analysis to help answer business questions about trends in New York City. While I can't share the real example, here is an overview of what I did in a new file:
+<ul>
+  <li>Data cleaning and preprocessing of FTA safety datasets</li>
+  <li>Statistical analysis of incident patterns and trends</li>
+  <li>Identification of high-risk areas and incident types</li>
+</ul>
+
+[Interactive NYC Transit Safety Map)
+
+An interactive time-slider visualization of transit safety incidents in New York City:
+<ul>
+  <li>Temporal analysis with time-slider functionality</li>
+  <li>Geospatial mapping of incidents across NYC transit system</li>
+  <li>Interactive exploration of safety events over time</li>
+</ul>
+
+<iframe src="\fta_nyc_time_slider_map.html" width="800" height="600" style="border:none;"></iframe>
+
+I used the data collected through the NTD that my team helped to validate and publish to transportation.dot.gov. I asked Claude for some help with finding the deadliest events in New York City. The resulting code is here:
+- [NYC Base Map Generation](/fta_nyc_basemap.py) - Creating foundational transit system maps
+- [Time Slider Map Script](/fta_nyc_time_slider_map.py) - Interactive temporal visualization implementation
+- [Deadly Events Mapping](/fta_deadly_events_map.py) - Focused analysis of fatal incidents
+
 ## UVA Data Science Program
 
 Here are a few of the things I am most proud of working on during my time enrolled at the University of Virginia School of Data Science.
@@ -46,35 +77,6 @@ I completed this exercise early into my excursion in data science because it pro
 [NFL 2021 Big Data Bowl](/pdf/sample_presentation.pdf)
 
 ---
-## Work
-
-### FTA Safety Analysis & Visualization
-
-I've developed a comprehensive suite of tools for analyzing and visualizing Federal Transit Administration (FTA) safety data. This work demonstrates geospatial analysis, interactive visualization, and data-driven insights for public transit safety.
-
-[FTA Safety Analysis](/fta_safety_analysis.py)
-
-Core analysis of FTA safety incident data including:
-<ul>
-  <li>Data cleaning and preprocessing of FTA safety datasets</li>
-  <li>Statistical analysis of incident patterns and trends</li>
-  <li>Identification of high-risk areas and incident types</li>
-</ul>
-
-[Interactive NYC Transit Safety Map](/fta_nyc_time_slider_map.html)
-
-An interactive time-slider visualization of transit safety incidents in New York City:
-<ul>
-  <li>Temporal analysis with time-slider functionality</li>
-  <li>Geospatial mapping of incidents across NYC transit system</li>
-  <li>Interactive exploration of safety events over time</li>
-</ul>
-
-Additional FTA Analysis Scripts:
-- [NYC Base Map Generation](/fta_nyc_basemap.py) - Creating foundational transit system maps
-- [Time Slider Map Script](/fta_nyc_time_slider_map.py) - Interactive temporal visualization implementation
-- [Deadly Events Mapping](/fta_deadly_events_map.py) - Focused analysis of fatal incidents
-
 ### NLP for Data Validation
 
 [Using NLP to Validate Data](/NLP%20wPublic%20Transit%20Data.ipynb)
