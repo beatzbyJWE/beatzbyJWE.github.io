@@ -4,13 +4,26 @@ layout: default
 
 <style>
   :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #3b82f6;
-    --text-color: #1f2937;
-    --light-bg: #f9fafb;
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* Copper Aquamarine Dream Palette */
+    --primary-color: #6C739C;
+    --secondary-color: #424658;
+    --accent-color: #C56B62;
+    --accent-light: #D9A69F;
+    --warm-copper: #DEA785;
+    --soft-pink: #F0DAD5;
+    --light-gray: #BFB9B5;
+    --sage-green: #BABBB1;
+    --text-color: #424658;
+    --light-bg: #F0DAD5;
+    --card-shadow: 0 4px 6px -1px rgba(66, 70, 88, 0.1), 0 2px 4px -1px rgba(66, 70, 88, 0.06);
+    --hover-shadow: 0 10px 15px -3px rgba(66, 70, 88, 0.15), 0 4px 6px -2px rgba(66, 70, 88, 0.08);
+  }
+
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    background-color: #FDFBFA;
   }
 
   .hero {
@@ -71,6 +84,7 @@ layout: default
   .project-card:hover {
     box-shadow: var(--hover-shadow);
     transform: translateY(-2px);
+    border-left-color: var(--warm-copper);
   }
 
   .project-card h3 {
@@ -91,8 +105,14 @@ layout: default
     text-decoration: underline;
   }
 
+  .project-card h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
   .project-card p {
-    color: #4b5563;
+    color: #5a5e6b;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
@@ -103,7 +123,7 @@ layout: default
   }
 
   .project-card li {
-    color: #4b5563;
+    color: #5a5e6b;
     line-height: 1.8;
     margin-bottom: 0.5rem;
   }
@@ -114,7 +134,7 @@ layout: default
   }
 
   .project-card ol li {
-    color: #4b5563;
+    color: #5a5e6b;
     line-height: 1.8;
     margin-bottom: 0.5rem;
   }
@@ -165,7 +185,7 @@ layout: default
 
   .featured-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    background: linear-gradient(135deg, var(--warm-copper) 0%, var(--accent-color) 100%);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
@@ -178,7 +198,7 @@ layout: default
 
   .divider {
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color) 0%, transparent 100%);
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--light-bg) 100%);
     margin: 3rem 0;
   }
 
@@ -195,6 +215,10 @@ layout: default
   }
 
   @media (max-width: 768px) {
+    body {
+      padding: 1rem 1.5rem;
+    }
+
     .hero h1 {
       font-size: 2rem;
     }
