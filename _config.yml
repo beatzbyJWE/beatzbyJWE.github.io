@@ -1,9 +1,8 @@
-title: _joe eldredge # your name (or website title) here
-logo: "/images/logo.jpeg?raw=true" # your photo (or logo) here
+title: Joseph Eldredge # your name (or website title) here
+logo: "/jwe-logo.svg" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  <a href="https://github.com/codebox/mosaic">I made ^ this mosaic ^ in Python and CLI using codebox's mosaic program!</a> 
   <br><br>
-  Please browse my site to see what I have been up to - my interests are managing data or projects involving data.
+  Please browse my site to see what I have been up to - my interests are managing data or projects involving data, playing music, and watching Baltimore sports teams.
   <br><br>
   <a href="https://www.linkedin.com/in/joseph-eldredge-75ab6349/">View My LinkedIn Profile</a> 
   
